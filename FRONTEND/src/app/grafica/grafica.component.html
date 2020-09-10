@@ -1,0 +1,8 @@
+<div>
+    <h1 style="text-align:center">{{nombreGrafica}}</h1>
+</div>
+<div class="chart-wrapper" class="img">
+    <canvas baseChart [datasets]="datosGrafica" [labels]="lineChartLabels" [options]="opcionesGrafica"
+        [colors]="coloresGrafica" [legend]="lineChartLegend" [chartType]="tipoGrafica" [plugins]="lineChartPlugins">
+    </canvas>
+</div>

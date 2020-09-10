@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7Jw/zYDRnhAoKwQTbTvfrxOUGFWQ0yEMmasimFYM232VKtOlg9ekgYrXqYr/hqYxfGrVQzWbYSIQe9MabRzMMA==",
+  "dgSpecHash": "egz4mAGZ7nepUbHhiS0s4P+Q7suFjT2mHj6OS5YCE83f6tbpyObNu4nZVyCu5vhMa99Gz4GndCUNvHR4tiLNZw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mateo.ortiz\\source\\repos\\ApiStorage\\ApiStorage\\ApiStorage.csproj",
+  "projectFilePath": "D:\\ANGULAR + NET + AZURE\\BACKEND\\ApiStorage\\ApiStorage\\ApiStorage.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mateo.ortiz\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",
     "C:\\Users\\mateo.ortiz\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",

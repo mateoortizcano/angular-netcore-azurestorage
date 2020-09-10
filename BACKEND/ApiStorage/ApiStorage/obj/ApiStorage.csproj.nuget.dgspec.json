@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mateo.ortiz\\source\\repos\\ApiStorage\\ApiStorage\\ApiStorage.csproj": {}
+    "D:\\ANGULAR + NET + AZURE\\BACKEND\\ApiStorage\\ApiStorage\\ApiStorage.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mateo.ortiz\\source\\repos\\ApiStorage\\ApiStorage\\ApiStorage.csproj": {
+    "D:\\ANGULAR + NET + AZURE\\BACKEND\\ApiStorage\\ApiStorage\\ApiStorage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mateo.ortiz\\source\\repos\\ApiStorage\\ApiStorage\\ApiStorage.csproj",
+        "projectUniqueName": "D:\\ANGULAR + NET + AZURE\\BACKEND\\ApiStorage\\ApiStorage\\ApiStorage.csproj",
         "projectName": "ApiStorage",
-        "projectPath": "C:\\Users\\mateo.ortiz\\source\\repos\\ApiStorage\\ApiStorage\\ApiStorage.csproj",
+        "projectPath": "D:\\ANGULAR + NET + AZURE\\BACKEND\\ApiStorage\\ApiStorage\\ApiStorage.csproj",
         "packagesPath": "C:\\Users\\mateo.ortiz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mateo.ortiz\\source\\repos\\ApiStorage\\ApiStorage\\obj\\",
+        "outputPath": "D:\\ANGULAR + NET + AZURE\\BACKEND\\ApiStorage\\ApiStorage\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mateo.ortiz\\AppData\\Roaming\\NuGet\\NuGet.Config",
