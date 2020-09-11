@@ -3,7 +3,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb" *ngIf="migaDePan !== undefined">
                 <li *ngFor="let directorio of obtenerJerarquiaDirectorios()" class="breadcrumb-item">
-                    <a href="#" (click)="consultarArchivosPorDirectorio(directorio)">{{directorio}}</a>
+                    <a class="hiperlink" (click)="consultarArchivosPorDirectorio(directorio)">{{directorio}}</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">{{directorioActual}}</li>
             </ol>
@@ -45,7 +45,7 @@
                         </svg>
                     </td>
                     <td>
-                        <a *ngIf="archivo.extension === 'dir'" href="#"
+                        <a class="hiperlink" *ngIf="archivo.extension === 'dir'"
                             (click)="consultarArchivosPorDirectorio(archivo.nombre)">{{archivo.nombre}}</a>
                         <a *ngIf="archivo.extension !== 'dir'">{{archivo.nombre}}</a>
                     </td>
