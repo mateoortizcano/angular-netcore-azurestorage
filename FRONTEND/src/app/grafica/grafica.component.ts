@@ -10,74 +10,87 @@ import { DatePipe } from '@angular/common';
   styleUrls: ['./grafica.component.css']
 })
 export class GraficaComponent implements OnInit {
-
-  nombreEjeY = '';
+  nombreGrafica = '';
+  tipoGrafica = 'line';
+  lineChartLabels: Label[] = [];
+  nombreEjeY = 'GWh';
+  datosGrafica: ChartDataSets[] = [
+    { data: [], label: 'Caudal', lineTension: 0, borderWidth: 2, fill: false, pointRadius: 0, pointHitRadius: 5 },
+    { data: [], label: 'Media histótica', lineTension: 0, borderWidth: 2, fill: false, pointRadius: 0, pointHitRadius: 5 }
+  ];
+  coloresGrafica: Color[] = [
+    {
+      borderColor: '#FF6A13',
+      pointBorderColor: '#FF6A13',
+      pointBackgroundColor: '#FF6A13',
+    },
+    {
+      borderColor: '#440099',
+      pointBorderColor: '#440099',
+      pointBackgroundColor: '#440099',
+    },
+    // OTROS COLORES XM #FFC600 #00966C #2AD2C9 #AC145A #75787B
+  ];
 
   opcionesGrafica = {
     responsive: true,
     scales: {
       xAxes: [{
         gridLines: {
-          display: false
+          lineWidth: 0,
+          zeroLineWidth: 1
         },
         ticks: {
-          maxTicksLimit: 6
+          maxTicksLimit: 13
         }
       }],
       yAxes: [{
+        gridLines: {
+          lineWidth: 0,
+          zeroLineWidth: 1
+        },
         scaleLabel: {
-          display: true,
-          labelString: 'GWh'
+          display: false,
+          labelString: this.nombreEjeY,
+        },
+        ticks: {
+          beginAtZero: true
         }
       }]
     }
   };
-
-  coloresGrafica: Color[] = [
-    {
-      borderColor: '#1a6589',
-      pointBorderColor: '#1a6589',
-      pointBackgroundColor: '#1a6589',
-    },
-    {
-      borderColor: '#e87722',
-      pointBorderColor: '#e87722',
-      pointBackgroundColor: '#e87722',
-    },
-  ];
-
   lineChartLegend = true;
   lineChartPlugins = [];
-  tipoGrafica = 'line';
 
-  nombreGrafica: string = '';
-  valoresGrafica = [];
-  valoresGraficaMedia = [];
-  valoresEjeX = [];
-
-  datosGrafica: ChartDataSets[] = [
-    { data: this.valoresGrafica, label: 'Caudal', lineTension: 0, borderWidth: 2, fill: false, pointRadius: 2 },
-    { data: this.valoresGraficaMedia, label: 'Media histótica', lineTension: 0, borderWidth: 2, fill: false, pointRadius: 2 }
-  ];
-
-  lineChartLabels: Label[] = this.valoresEjeX;
-
-
+  resolucion = 'dia';
 
   constructor(private servicioDatosGrafica: DatosGraficasService, private datePipe: DatePipe) { }
-
   ngOnInit() {
-    this.servicioDatosGrafica.obtenerDatosGraficaAportesHidricos('dia')
+    this.consultarDatosGraficas(this.resolucion);
+  }
+
+  private consultarDatosGraficas(resolucion: string) {
+    let valoresGrafica = [];
+    let valoresEjeX = [];
+    let valoresGrafica2 = [];
+    this.servicioDatosGrafica.obtenerDatosGraficaAportesHidricos(resolucion)
       .subscribe(datosGrafica => {
         this.nombreGrafica = datosGrafica.Nombre;
         this.nombreEjeY = datosGrafica.Variables[0].UnidadMedida;
         datosGrafica.Variables[0].Datos.forEach(dato => {
-          this.valoresGrafica.unshift(dato.Valor);
-          this.valoresEjeX.unshift(this.datePipe.transform(dato.Fecha, 'dd/MMM/yyyy', 'UTC-5', 'es-CO'));
+          valoresGrafica.unshift(dato.Valor);
+          valoresEjeX.unshift(this.datePipe.transform(dato.Fecha, 'dd/MMM/yyyy', 'UTC-5', 'es-CO'));
         });
         datosGrafica.Variables[1].Datos.forEach(dato => {
-          this.valoresGraficaMedia.unshift(dato.Valor);
+          valoresGrafica2.unshift(dato.Valor);
         });
+        this.lineChartLabels = valoresEjeX;
+        this.datosGrafica[0].data = valoresGrafica;
+        this.datosGrafica[1].data = valoresGrafica2;
       });
+  }
+
+  cambiarResolucion(event) {
+    this.consultarDatosGraficas(event.target.value);
   }
 }
