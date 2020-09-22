@@ -4,6 +4,7 @@ import { ChartsModule, ThemeService } from 'ng2-charts';
 import { CommonModule, DatePipe } from '@angular/common';
 import { registerLocaleData } from '@angular/common';
 import localeCo from '@angular/common/locales/es-CO';
+import { HttpClientModule } from '@angular/common/http';
 
 registerLocaleData(localeCo, 'es-Co');
 
@@ -12,6 +13,7 @@ registerLocaleData(localeCo, 'es-Co');
   imports: [
     CommonModule,
     ChartsModule,
+    HttpClientModule
 
   ],
   exports: [GraficaComponent],
