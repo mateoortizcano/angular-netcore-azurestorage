@@ -1,15 +1,1 @@
-<div>
-    <h1 style="text-align:center">{{nombreGrafica}}</h1>
-</div>
-<div *ngIf="this.datosGrafica[0].data.length !== 0" class="chart-wrapper" class="img">
-    <canvas baseChart [datasets]="datosGrafica" [labels]="lineChartLabels" [options]="opcionesGrafica"
-        [colors]="coloresGrafica" [legend]="lineChartLegend" [chartType]="tipoGrafica" [plugins]="lineChartPlugins">
-    </canvas>
-</div>
-<div style="text-align:center">
-    <label for="opcionesResolucion">Resolucion</label>
-    <select name="opcionesResolucion" [value]="resolucion" id="opcionesResolucion" (change)="cambiarResolucion($event)">
-        <option value="dia">Diario</option>
-        <option value="mes">Mes</option>
-    </select>
-</div>
+<lib-grafica></lib-grafica>

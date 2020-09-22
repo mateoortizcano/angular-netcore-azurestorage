@@ -120,6 +120,41 @@
           }
         }
       }
+    },
+    "portal-indicadores": {
+      "projectType": "library",
+      "root": "projects/portal-indicadores",
+      "sourceRoot": "projects/portal-indicadores/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/portal-indicadores/tsconfig.lib.json",
+            "project": "projects/portal-indicadores/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/portal-indicadores/src/test.ts",
+            "tsConfig": "projects/portal-indicadores/tsconfig.spec.json",
+            "karmaConfig": "projects/portal-indicadores/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/portal-indicadores/tsconfig.lib.json",
+              "projects/portal-indicadores/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "listar-archivos-test"
 }

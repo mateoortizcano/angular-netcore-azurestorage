@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "portal-indicadores": [
+        "dist/portal-indicadores"
+      ],
+      "portal-indicadores/*": [
+        "dist/portal-indicadores/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

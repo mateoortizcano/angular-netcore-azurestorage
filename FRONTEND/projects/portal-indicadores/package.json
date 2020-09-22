@@ -1,0 +1,16 @@
+{
+  "name": "portal-indicadores",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14"
+  },
+  "dependencies": {
+    "@angular/platform-browser": "~8.2.14",
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14",
+    "chart.js": "^2.9.3",
+    "ng2-charts": "^2.4.1",
+    "rxjs": "~6.4.0"
+  }
+}
