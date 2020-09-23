@@ -1,0 +1,24 @@
+<ul class="nav nav-tabs">
+    <li class="nav-item" *ngFor="let tipoIndicador of indicadoresPorTipo">
+        <a class="nav-link" [ngClass]="{active: tipoIndicador.id === idIndicadorSeleccionado}"
+            (click)="cambiarTipoIndicador(tipoIndicador.id)">{{tipoIndicador.tipo}}</a>
+    </li>
+</ul>
+<div class="form-inline">
+    <div class="form-group mb-2">
+        <label for="indicador">Indicador</label>
+        <select class="form-control" id="indicador">
+            <option *ngFor="let indicador of indicadores">{{indicador}}
+            </option>
+        </select>
+    </div>
+    <!-- <div class="form-group mx-sm-3 mb-2">
+        <label for="indicador">Resolución</label>
+        <select class="form-control" id="indicador">
+            <option>Horario</option>
+            <option>Mensual</option>
+            <option>Diario</option>
+        </select>
+    </div> -->
+</div>
+<lib-aportes-hidricos></lib-aportes-hidricos>

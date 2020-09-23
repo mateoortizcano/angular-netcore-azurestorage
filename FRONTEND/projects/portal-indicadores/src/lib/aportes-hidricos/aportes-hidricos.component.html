@@ -1,5 +1,5 @@
 <div>
-    <h1 style="text-align:center">{{nombreGrafica}}</h1>
+    <h3 style="text-align:center">{{nombreGrafica}}</h3>
 </div>
 <div *ngIf="this.datosGrafica[0].data.length !== 0" class="chart-wrapper" class="img">
     <canvas baseChart [datasets]="datosGrafica" [labels]="lineChartLabels" [options]="opcionesGrafica"

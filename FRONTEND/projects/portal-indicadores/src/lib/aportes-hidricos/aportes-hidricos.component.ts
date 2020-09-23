@@ -5,11 +5,11 @@ import { DatePipe } from '@angular/common';
 import { DatosGraficasService } from '../services/datos-graficas.service';
 
 @Component({
-  selector: 'lib-grafica',
-  templateUrl: './grafica.component.html',
-  styleUrls: ['./grafica.component.css']
+  selector: 'lib-aportes-hidricos',
+  templateUrl: './aportes-hidricos.component.html',
+  styleUrls: ['./aportes-hidricos.component.css']
 })
-export class GraficaComponent implements OnInit {
+export class AportesHidricosComponent implements OnInit {
   nombreGrafica = '';
   tipoGrafica = 'line';
   lineChartLabels: Label[] = [];
